@@ -27,9 +27,9 @@
     --spacing-xl: 48px;
     --spacing-2xl: 64px;
 
-    /* Border Radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
+    /* Border Radius - None for Pinecone sharp edges */
+    --radius-sm: 0px;
+    --radius-md: 0px;
     --radius-full: 50%;
 
     /* Shadows */
@@ -215,50 +215,46 @@ p {
     font-weight: 600;
     font-size: 1rem;
     padding: 14px 28px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     cursor: pointer;
     text-decoration: none;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
 .project-link:hover,
 .project-link:focus {
-    background: rgba(0, 0, 0, 0.02);
-    border: 2px solid #000000;
-    padding: 13px 27px; /* Adjust for border thickness change */
+    border-color: #000000;
 }
 
-/* Corner accent marks - hidden by default */
+/* Corner accent marks - OUTSIDE button initially */
 .project-link::before,
 .project-link::after {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-color: #000000;
     border-style: solid;
-    opacity: 0;
-    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: scale(0.8);
+    opacity: 1;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Top-left corner */
+/* Top-left corner - starts outside */
 .project-link::before {
-    top: -3px;
-    left: -3px;
+    top: -6px;
+    left: -6px;
     border-width: 2px 0 0 2px;
 }
 
-/* Top-right corner */
+/* Top-right corner - starts outside */
 .project-link::after {
-    top: -3px;
-    right: -3px;
+    top: -6px;
+    right: -6px;
     border-width: 2px 2px 0 0;
 }
 
-/* Bottom corners using a wrapper span */
+/* Bottom corners using wrapper span */
 .link-crosshair {
     position: absolute;
     top: 0;
@@ -272,36 +268,47 @@ p {
 .link-crosshair::after {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-color: #000000;
     border-style: solid;
-    opacity: 0;
-    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: scale(0.8);
+    opacity: 1;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Bottom-left corner */
+/* Bottom-left corner - starts outside */
 .link-crosshair::before {
-    bottom: -3px;
-    left: -3px;
+    bottom: -6px;
+    left: -6px;
     border-width: 0 0 2px 2px;
 }
 
-/* Bottom-right corner */
+/* Bottom-right corner - starts outside */
 .link-crosshair::after {
-    bottom: -3px;
-    right: -3px;
+    bottom: -6px;
+    right: -6px;
     border-width: 0 2px 2px 0;
 }
 
-/* Show corner accents on hover */
-.project-link:hover::before,
-.project-link:hover::after,
-.project-link:hover .link-crosshair::before,
+/* Hover: accents animate INWARD to button edges */
+.project-link:hover::before {
+    top: 0px;
+    left: 0px;
+}
+
+.project-link:hover::after {
+    top: 0px;
+    right: 0px;
+}
+
+.project-link:hover .link-crosshair::before {
+    bottom: 0px;
+    left: 0px;
+}
+
 .project-link:hover .link-crosshair::after {
-    opacity: 1;
-    transform: scale(1);
+    bottom: 0px;
+    right: 0px;
 }
 
 .crosshair-h,
