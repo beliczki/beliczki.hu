@@ -9,90 +9,120 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="avatar-circle">
-                <div class="crosshair-outer"></div>
-                <div class="crosshair-inner"></div>
-                <span>RB</span>
+    <div class="page-wrapper">
+        <!-- Hero Section Row -->
+        <div class="section-row">
+            <div class="container">
+                <header class="hero">
+                    <div class="avatar-circle">
+                        <div class="crosshair-outer"></div>
+                        <div class="crosshair-inner"></div>
+                        <span>B<br/>R</span>
+                    </div>
+                    <h1>Robert Beliczki</h1>
+                    <p class="subtitle">Martech Expert, AI Engineering</p>
+                </header>
             </div>
-            <h1>Robert Beliczki</h1>
-            <p class="subtitle">Martech Expert, AI Engineering</p>
-        </header>
+        </div>
 
-        <!-- About Section -->
-        <section class="about">
-            <p class="bio">
-                I work on building intelligent systems that help people interact with AI in meaningful ways.
-                My focus is on creating practical applications that bridge the gap between advanced language models
-                and real-world use cases. I'm particularly interested in how conversational AI can be made more
-                accessible and useful for everyday tasks.
-            </p>
-        </section>
+        <!-- About Section Row -->
+        <div class="section-row">
+            <div class="container">
+                <section class="about">
+                    <p class="bio">
+                        I work on building intelligent systems that help people interact with AI in meaningful ways.
+                        My focus is on creating practical applications that bridge the gap between advanced language models
+                        and real-world use cases. I'm particularly interested in how conversational AI can be made more
+                        accessible and useful for everyday tasks.
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Projects Heading Row -->
+        <div class="section-row">
+            <div class="container">
+                <div class="projects-header">
+                    <h2>Projects</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- Projects Section -->
-        <section class="projects">
-            <h2>Projects</h2>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="icon-wrapper">
-                        <i data-lucide="message-square" class="project-icon"></i>
-                        <div class="icon-crosshair"></div>
+        <div class="section-row">
+            <div class="container">
+                <section class="projects">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="icon-wrapper">
+                                <i data-lucide="message-square" class="project-icon"></i>
+                                <div class="icon-crosshair"></div>
+                            </div>
+                            <h3>ConfAI</h3>
+                        </div>
+                        <p class="project-description">
+                            An AI-powered conference intelligence platform that helps attendees derive insights from
+                            conference materials. Features multi-model AI support, vector embeddings for semantic search,
+                            and collaborative insights sharing.
+                        </p>
+                        <a href="https://confai.telekom.hu" class="project-link" target="_blank" rel="noopener">
+                            <span class="link-crosshair"></span>
+                            Visit Project
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </a>
                     </div>
-                    <h3>ConfAI</h3>
-                </div>
-                <p class="project-description">
-                    An AI-powered conference intelligence platform that helps attendees derive insights from
-                    conference materials. Features multi-model AI support, vector embeddings for semantic search,
-                    and collaborative insights sharing.
-                </p>
-                <a href="https://confai.telekom.hu" class="project-link" target="_blank" rel="noopener">
-                    <span class="link-crosshair"></span>
-                    Visit Project
-                    <i data-lucide="arrow-right" class="arrow-icon"></i>
-                </a>
+                </section>
             </div>
+        </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="icon-wrapper">
-                        <i data-lucide="grid-3x3" class="project-icon"></i>
-                        <div class="icon-crosshair"></div>
+        <!-- Project 2 Row -->
+        <div class="section-row">
+            <div class="container">
+                <section class="projects">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="icon-wrapper">
+                                <i data-lucide="grid-3x3" class="project-icon"></i>
+                                <div class="icon-crosshair"></div>
+                            </div>
+                            <h3>Messaging Matrix</h3>
+                        </div>
+                        <p class="project-description">
+                            A comprehensive framework for understanding and implementing effective messaging strategies
+                            across different channels and contexts, powered by AI analysis and insights.
+                        </p>
+                        <a href="https://messagingmatrix.ai" class="project-link" target="_blank" rel="noopener">
+                            <span class="link-crosshair"></span>
+                            Visit Project
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </a>
                     </div>
-                    <h3>Messaging Matrix</h3>
-                </div>
-                <p class="project-description">
-                    A comprehensive framework for understanding and implementing effective messaging strategies
-                    across different channels and contexts, powered by AI analysis and insights.
-                </p>
-                <a href="https://messagingmatrix.ai" class="project-link" target="_blank" rel="noopener">
-                    <span class="link-crosshair"></span>
-                    Visit Project
-                    <i data-lucide="arrow-right" class="arrow-icon"></i>
-                </a>
+                </section>
             </div>
-        </section>
+        </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="social-links">
-                <a href="https://github.com/beliczki/" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/beliczkirobert/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://x.com/beliczki/" target="_blank" rel="noopener" aria-label="X (Twitter)">
-                    <i data-lucide="twitter"></i>
-                </a>
-                <a href="https://jsfiddle.net/u/Beliczki/fiddles/" target="_blank" rel="noopener" aria-label="JSFiddle">
-                    <i data-lucide="code"></i>
-                </a>
+        <!-- Footer Row -->
+        <div class="section-row">
+            <div class="container">
+                <footer>
+                    <div class="social-links">
+                        <a href="https://github.com/beliczki/" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/beliczkirobert/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://x.com/beliczki/" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="https://jsfiddle.net/u/Beliczki/fiddles/" target="_blank" rel="noopener" aria-label="JSFiddle">
+                            <i data-lucide="code"></i>
+                        </a>
+                    </div>
+                    <p>&copy; 2025 Robert Beliczki</p>
+                </footer>
             </div>
-            <p>&copy; 2025 Robert Beliczki</p>
-        </footer>
+        </div>
     </div>
 
     <script>
