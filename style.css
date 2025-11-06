@@ -346,6 +346,32 @@ footer {
     font-size: 14px;
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--text-secondary);
+    transition: color 200ms ease;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+}
+
 footer p {
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
