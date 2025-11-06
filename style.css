@@ -290,77 +290,109 @@ p {
 .project-link {
     display: inline-flex;
     align-items: center;
-    gap: 0;
-    background: #ffffff;
-    color: var(--primary-bg);
+    gap: var(--spacing-sm);
+    background: transparent;
+    color: #000000;
     font-weight: 600;
     font-size: 1rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-decoration: none;
-    transition: all 200ms ease;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
 }
 
 .project-link:hover,
 .project-link:focus {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.02);
+    border: 2px solid #000000;
+    padding: 13px 27px; /* Adjust for border thickness change */
 }
 
+/* Corner accent marks - hidden by default */
+.project-link::before,
+.project-link::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: #000000;
+    border-style: solid;
+    opacity: 0;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.8);
+}
+
+/* Top-left corner */
+.project-link::before {
+    top: -3px;
+    left: -3px;
+    border-width: 2px 0 0 2px;
+}
+
+/* Top-right corner */
+.project-link::after {
+    top: -3px;
+    right: -3px;
+    border-width: 2px 2px 0 0;
+}
+
+/* Bottom corners using a wrapper span */
 .link-crosshair {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75em 1em;
-    border-right: 1px solid rgba(37, 43, 54, 0.1);
-    transition: all 200ms ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.link-crosshair::before,
+.link-crosshair::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: #000000;
+    border-style: solid;
+    opacity: 0;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.8);
+}
+
+/* Bottom-left corner */
+.link-crosshair::before {
+    bottom: -3px;
+    left: -3px;
+    border-width: 0 0 2px 2px;
+}
+
+/* Bottom-right corner */
+.link-crosshair::after {
+    bottom: -3px;
+    right: -3px;
+    border-width: 0 2px 2px 0;
+}
+
+/* Show corner accents on hover */
+.project-link:hover::before,
+.project-link:hover::after,
+.project-link:hover .link-crosshair::before,
+.project-link:hover .link-crosshair::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .crosshair-h,
 .crosshair-v {
-    position: absolute;
-    background: var(--primary-bg);
-    opacity: 0.4;
-    transition: all 200ms ease;
-}
-
-.crosshair-h {
-    width: 12px;
-    height: 1px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.crosshair-v {
-    width: 1px;
-    height: 12px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.project-link:hover .crosshair-h,
-.project-link:hover .crosshair-v {
-    opacity: 0.7;
-}
-
-.project-link > span:nth-child(2) {
-    padding: 0.75em 1.25em;
-    border-right: 1px solid rgba(37, 43, 54, 0.1);
-    transition: all 200ms ease;
+    display: none;
 }
 
 .arrow-icon {
     width: 18px;
     height: 18px;
-    padding: 0.75em 1em;
     transition: transform 200ms ease;
 }
 
