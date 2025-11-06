@@ -115,8 +115,8 @@ p {
 
 .avatar-circle {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 6rem;
+    height: 6rem;
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-full);
     background: var(--accent-blue);
@@ -124,8 +124,9 @@ p {
     align-items: center;
     justify-content: center;
     margin: 0 auto var(--spacing-md);
+    padding: 2rem;
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1;
     transition: all 200ms ease;
