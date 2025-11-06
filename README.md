@@ -1,6 +1,6 @@
 # beliczki.hu
 
-Personal portfolio website for Balazs Beliczki - AI Engineer
+Personal portfolio website for Robert Beliczki - AI Engineer
 
 ## Overview
 
@@ -63,4 +63,4 @@ Simply open `index.html` in your browser. No build process required.
 
 ## License
 
-Copyright © 2025 Balazs Beliczki. All rights reserved.
+Copyright © 2025 Robert Beliczki. All rights reserved.
