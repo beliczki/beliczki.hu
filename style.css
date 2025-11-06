@@ -88,12 +88,18 @@ p {
 
 /* Container - Max width with vertical borders */
 .container {
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 0;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+    }
 }
 
 /* Hero Section */
@@ -115,19 +121,14 @@ p {
     border-radius: var(--radius-full);
     background: var(--accent-blue);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto var(--spacing-md);
     color: #FFFFFF;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1;
     transition: all 200ms ease;
-}
-
-.avatar-circle span {
-    line-height: 0.9;
 }
 
 .avatar-circle:hover {
@@ -430,7 +431,7 @@ footer p {
         width: 96px;
         height: 96px;
         aspect-ratio: 1 / 1;
-        font-size: 32px;
+        font-size: 22px;
     }
 }
 
@@ -447,7 +448,7 @@ footer p {
         width: 64px;
         height: 64px;
         aspect-ratio: 1 / 1;
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .bio {
