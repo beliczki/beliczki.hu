@@ -101,13 +101,11 @@ p {
     color: var(--primary-bg);
     font-size: 36px;
     font-weight: 700;
-    box-shadow: 0 0 20px rgba(85,239,203,0.3);
     transition: all 300ms ease;
 }
 
 .avatar-circle:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(85,239,203,0.5);
 }
 
 /* Crosshair elements for avatar */
@@ -292,26 +290,24 @@ p {
 .project-link {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    background: linear-gradient(90deg, var(--accent-start) 0%, var(--accent-end) 100%);
+    gap: 0;
+    background: #ffffff;
     color: var(--primary-bg);
     font-weight: 600;
     font-size: 1rem;
-    padding: 0.75em 2em;
     border-radius: var(--radius-sm);
-    border: none;
-    box-shadow: var(--shadow-glow);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
     text-decoration: none;
-    transition: all 250ms ease, transform 140ms ease;
+    transition: all 200ms ease;
     position: relative;
+    overflow: hidden;
 }
 
 .project-link:hover,
 .project-link:focus {
-    background: linear-gradient(90deg, var(--accent-end) 0%, var(--accent-start) 100%);
-    box-shadow: var(--shadow-glow-lg);
-    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .link-crosshair {
@@ -321,50 +317,56 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0.75em 1em;
+    border-right: 1px solid rgba(37, 43, 54, 0.1);
+    transition: all 200ms ease;
 }
 
 .crosshair-h,
 .crosshair-v {
     position: absolute;
     background: var(--primary-bg);
-    opacity: 0.6;
+    opacity: 0.4;
+    transition: all 200ms ease;
 }
 
 .crosshair-h {
-    width: 16px;
-    height: 2px;
+    width: 12px;
+    height: 1px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
 .crosshair-v {
-    width: 2px;
-    height: 16px;
+    width: 1px;
+    height: 12px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
+.project-link:hover .crosshair-h,
+.project-link:hover .crosshair-v {
+    opacity: 0.7;
+}
+
+.project-link > span:nth-child(2) {
+    padding: 0.75em 1.25em;
+    border-right: 1px solid rgba(37, 43, 54, 0.1);
+    transition: all 200ms ease;
+}
+
 .arrow-icon {
     width: 18px;
     height: 18px;
-    transition: transform 220ms ease;
+    padding: 0.75em 1em;
+    transition: transform 200ms ease;
 }
 
 .project-link:hover .arrow-icon,
 .project-link:focus .arrow-icon {
-    transform: translateX(4px);
-}
-
-.project-link:hover .link-crosshair,
-.project-link:focus .link-crosshair {
-    animation: crosshair-pulse 600ms ease;
-}
-
-@keyframes crosshair-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2) rotate(15deg); }
+    transform: translateX(3px);
 }
 
 /* Footer */
@@ -428,7 +430,7 @@ footer {
 
 /* Accessibility */
 .project-link:focus {
-    outline: 2px solid var(--accent-start);
+    outline: 1px solid rgba(255, 255, 255, 0.4);
     outline-offset: 2px;
 }
 
