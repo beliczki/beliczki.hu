@@ -59,7 +59,7 @@ Simply open `index.html` in your browser. No build process required.
 ## Projects Featured
 
 - **ConfAI** ([confai.telekom.hu](https://confai.telekom.hu)): AI-powered conference intelligence platform
-- **Messaging Matrix** ([messagingmatrix.ai](https://messagingmatrix.ai)): AI-powered messaging strategy framework
+- **Messaging Matrix** ([erste.messagingmatrix.ai](https://erste.messagingmatrix.ai)): AI-powered messaging strategy framework
 
 ## License
 
