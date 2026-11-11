@@ -237,6 +237,18 @@ p {
     color: var(--accent-blue-dark);
 }
 
+/* Grafia Studio eye, set at 45° as it settles on grafia.hu. The PNG is used as a mask,
+   so the eye takes the icon colour in both themes (462×131 source). */
+.project-icon--grafia-eye {
+    width: 40px;
+    height: auto;
+    aspect-ratio: 462 / 131;
+    background-color: currentColor;
+    -webkit-mask: url(assets/grafia-eye.png) center / contain no-repeat;
+    mask: url(assets/grafia-eye.png) center / contain no-repeat;
+    transform: rotate(-45deg);
+}
+
 .icon-crosshair {
     display: none;
 }
