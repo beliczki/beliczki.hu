@@ -28,7 +28,7 @@ Forrás (csak olvasás): `~/grafia/index.html` és `~/grafia/assets/grafia-eye.p
 Robi jóváhagyta (kék szem). Mind a két rész elkészült, helyben ellenőrizve.
 
 - A Lucide az 1.72.0-ra van rögzítve. A három márkaikon inline SVG, az útvonalakat gépi összevetéssel ellenőriztem a lucide-static 0.577.0 eredetijeivel. Mind a négy footer ikon látszik.
-- A Grafia szekció a Projects előtt van, a meglévő fejléc- és kártyaosztályokkal. Új CSS csak a `.project-icon--grafia-eye` modifier.
+- A Grafia Studio a meglévő kártyaosztályokat használja. Robi kérésére nincs saját „Grafia” címe: utolsó kártya a Projects alatt, a footer felett. Új CSS csak a `.project-icon--grafia-eye` modifier.
 - `assets/grafia-eye.png`: a `~/grafia` szem-képének átlátszó változata. A papír lett az átlátszó rész, a legsötétebb tinta teljesen fedő, a mérete ugyanúgy 462×131. CSS-maszkként használom, -45°-ra forgatva, így világos és sötét témában is a projektikonok kékjét kapja.
 - Ellenőrzés helyi HTTP-szerverről (a maszk miatt; az élessel azonos, egy originről szolgál ki): asztali és 375 px, világos és sötét téma.
 - A szem körvonala 40 px-en kb. 1 px vékony, vagyis vékonyabb, mint a Lucide-ikonok 2 px-es vonala. A szem így is felismerhető, de az írisz-kör ekkora méretben elvész.
