@@ -5,11 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Robert Beliczki - AI Engineer specializing in conversational AI and intelligent systems">
     <title>Robert Beliczki - AI Engineer</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
     <div class="page-wrapper">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" role="radiogroup" aria-label="Color theme">
+            <button class="theme-toggle-btn" data-theme="dark" title="Dark" aria-label="Dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+            <button class="theme-toggle-btn" data-theme="light" title="Light" aria-label="Light mode">
+                <i data-lucide="sun"></i>
+            </button>
+            <div class="theme-toggle-pill"></div>
+        </div>
+
         <!-- Hero Section Row -->
         <div class="section-row">
             <div class="container">
@@ -128,6 +155,57 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Theme toggle
+        (function() {
+            var toggle = document.querySelector('.theme-toggle');
+            var pill = toggle.querySelector('.theme-toggle-pill');
+            var buttons = toggle.querySelectorAll('.theme-toggle-btn');
+            var isDark = document.documentElement.classList.contains('dark');
+
+            function updateToggle(dark) {
+                buttons.forEach(function(btn) {
+                    var active = (dark && btn.dataset.theme === 'dark') ||
+                                 (!dark && btn.dataset.theme === 'light');
+                    btn.classList.toggle('active', active);
+                });
+                pill.classList.toggle('pos-1', !dark);
+            }
+
+            updateToggle(isDark);
+
+            function setTheme(dark, event) {
+                var apply = function() {
+                    document.documentElement.classList.toggle('dark', dark);
+                    localStorage.setItem('theme', dark ? 'dark' : 'light');
+                    updateToggle(dark);
+                };
+
+                if (event && document.startViewTransition) {
+                    var rect = event.currentTarget.getBoundingClientRect();
+                    var x = rect.left + rect.width / 2;
+                    var y = rect.top + rect.height / 2;
+                    document.documentElement.style.setProperty('--theme-switch-x', x + 'px');
+                    document.documentElement.style.setProperty('--theme-switch-y', y + 'px');
+                    document.startViewTransition(apply);
+                } else {
+                    apply();
+                }
+            }
+
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    setTheme(btn.dataset.theme === 'dark', e);
+                });
+            });
+
+            // Listen for OS theme changes when no explicit preference
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    setTheme(e.matches);
+                }
+            });
+        })();
     </script>
 </body>
 </html>
